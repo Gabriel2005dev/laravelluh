@@ -3,48 +3,45 @@
         [
             'label'  => 'Home',
             'href'   => route('home'),
-            'icon'   => asset('images/icons/home.png'),
             'active' => request()->routeIs('home'),
         ],
 
         [
             'label'  => 'Serviços',
             'href'   => route('services'),
-            'icon'   => asset('images/icons/service.png'),
             'active' => request()->routeIs('services'),
         ],
 
         [
             'label'  => 'Galeria',
             'href'   => url('/#galeria'),
-            'icon'   => asset('images/icons/gallery.png'),
             'active' => false,
         ],
 
         [
             'label'  => 'Sobre',
             'href'   => url('/#sobre'),
-            'icon'   => asset('images/icons/about.png'),
             'active' => false,
         ],
 
         [
             'label'  => 'Contato',
             'href'   => url('/#contato'),
-            'icon'   => asset('images/icons/contact.png'),
             'active' => false,
         ],
     ];
 @endphp
 
+
 <header
     class="
-        sticky
+        absolute
+        inset-x-0
         top-0
         z-50
         border-b
-        border-zinc-200
-        backdrop-blur-md
+        border-white/10
+        bg-transparent
     "
 >
     <div
@@ -59,8 +56,10 @@
             lg:px-8
         "
     >
+
         {{-- Logo --}}
         <x-application-logo />
+
 
         {{-- Navegação Desktop --}}
         <nav
@@ -71,53 +70,54 @@
                 lg:flex
             "
         >
+
             @foreach ($navItems as $item)
+
                 <a
                     href="{{ $item['href'] }}"
                     class="
                         group
                         relative
-                        flex
-                        flex-col
-                        items-center
-                        gap-1
                         px-4
                         py-4
+                        text-sm
                         font-medium
+                        text-white
                         transition-all
                         duration-300
                         hover:-translate-y-1
-                        {{ $item['active'] ? '' : 'text-zinc-700' }}
+                        hover:text-orange-300
                     "
                 >
-                    {{-- Ícone + Texto --}}
-                    <div
-                        class="
-                            flex
-                            items-center
-                            gap-2
-                            text-sm
-                        "
-                    >
-                        <img
-                            src="{{ $item['icon'] }}"
-                            alt="{{ $item['label'] }}"
-                            class="
-                                h-6
-                                w-6
-                                object-contain
-                                transition-all
-                                duration-300
-                                group-hover:scale-110
-                            "
-                        >
 
-                        <span>{{ $item['label'] }}</span>
-                    </div>
+                    <span>
+                        {{ $item['label'] }}
+                    </span>
+
+                    {{-- Indicador do item ativo --}}
+                    <span
+                        class="
+                            absolute
+                            bottom-2
+                            left-1/2
+                            h-0.5
+                            w-0
+                            -translate-x-1/2
+                            rounded-full
+                            bg-orange-300
+                            transition-all
+                            duration-300
+                            group-hover:w-1/2
+                            {{ $item['active'] ? 'w-1/2' : '' }}
+                        "
+                    ></span>
 
                 </a>
+
             @endforeach
+
         </nav>
+
 
         {{-- Ações Desktop --}}
         <div
@@ -125,52 +125,30 @@
                 flex
                 items-center
                 gap-3
-                
             "
         >
+
             @guest
+
                 {{-- Botão Login --}}
                 <a
                     href="{{ route('login') }}"
-                    class="
-                        rounded-xl
-                        border
-                        border-zinc-300
-                        px-5
-                        py-2.5
-                        text-sm
-                        font-medium
-                        text-zinc-700
-                        transition
-                        hover:bg-zinc-100
-                    "
-                >
+                   class="fuzzy-bubbles-bold group inline-flex w-full items-center justify-center gap-3  bg-white px-4 py-2.5 text-md font-semibold shadow-lg shadow-orange-950/20 transition-all duration-300 hover:shadow-xl hover:shadow-orange-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 active:scale-[0.98] sm:w-auto">
                     Entrar
-                </a>
+                     <x-lucide-arrow-right class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+</a>
 
-                {{-- Botão Agendar --}}
-                <a
-                    href="{{ route('services') }}"
-                    class="
-                        rounded-xl
-                        bg-rose-600
-                        px-5
-                        py-2.5
-                        text-sm
-                        font-semibold
-                        text-white
-                        transition
-                        hover:bg-rose-700
-                    "
-                >
-                    Agendar Agora
-                </a>
             @endguest
 
+
             @auth
+
                 {{-- Avatar + Dropdown --}}
                 <x-layout.profile-dropdown />
+
             @endauth
+
         </div>
+
     </div>
 </header>

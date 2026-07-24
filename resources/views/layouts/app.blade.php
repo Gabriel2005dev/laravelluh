@@ -54,7 +54,7 @@
 
     class="
         min-h-screen
-        bg-orange-50
+        bg-amber-50
         font-sans
         antialiased
         text-gray-900
