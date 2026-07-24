@@ -213,54 +213,6 @@ $mobileItems = [
 
 
 </div>
-
-
-
-
-{{-- Indicador coração --}}
-
-<span
-
-    class="
-
-        absolute
-
-        -bottom-2
-
-
-        text-rose-600
-
-
-        text-base
-
-
-        leading-none
-
-
-        transition-all
-
-        duration-300
-
-
-        {{
-            $item['active']
-
-            ? 'opacity-100 scale-100'
-
-            : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100'
-
-        }}
-
-    "
-
->
-
-♥
-
-</span>
-
-
-
 </a>
 
 
