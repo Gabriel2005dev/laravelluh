@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fuzzy-bubbles {
+    font-family: "Fuzzy Bubbles", sans-serif;
+}
+
+.fuzzy-bubbles-bold {
+    font-family: "Fuzzy Bubbles", sans-serif;
+    font-weight: 700;
+}
