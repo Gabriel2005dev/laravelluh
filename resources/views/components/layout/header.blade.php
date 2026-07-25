@@ -35,7 +35,6 @@
 
 <header
     class="
-        absolute
         inset-x-0
         top-0
         z-50
@@ -82,11 +81,11 @@
                         py-4
                         text-sm
                         font-medium
-                        text-white
+                    
                         transition-all
                         duration-300
                         hover:-translate-y-1
-                        hover:text-orange-300
+                        
                     "
                 >
 
