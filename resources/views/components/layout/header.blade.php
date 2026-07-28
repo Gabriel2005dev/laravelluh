@@ -32,15 +32,15 @@
     ];
 @endphp
 
-
 <header
     class="
+        sticky
         inset-x-0
         top-0
         z-50
-        border-b
-        border-white/10
-        bg-transparent
+        backdrop-blur-xl
+        transition-all
+        duration-300
     "
 >
     <div
@@ -51,14 +51,11 @@
             max-w-7xl
             items-center
             justify-between
-            px-6
-            lg:px-8
         "
     >
 
         {{-- Logo --}}
         <x-application-logo />
-
 
         {{-- Navegação Desktop --}}
         <nav
@@ -77,15 +74,18 @@
                     class="
                         group
                         relative
+                        flex
+                        flex-col
+                        items-center
+                        justify-center
                         px-4
-                        py-4
+                        py-2
                         text-sm
                         font-medium
-                    
+                        text-orange-950
                         transition-all
                         duration-300
                         hover:-translate-y-1
-                        
                     "
                 >
 
@@ -93,30 +93,43 @@
                         {{ $item['label'] }}
                     </span>
 
-                    {{-- Indicador do item ativo --}}
+                    {{-- Asterisk --}}
                     <span
                         class="
+                            pointer-events-none
                             absolute
-                            bottom-2
+                            -bottom-1
                             left-1/2
-                            h-0.5
-                            w-0
                             -translate-x-1/2
-                            rounded-full
-                            bg-orange-300
+                            translate-y-2
+                            opacity-0
+                            scale-100
                             transition-all
                             duration-300
-                            group-hover:w-1/2
-                            {{ $item['active'] ? 'w-1/2' : '' }}
+                            ease-out
+
+                            group-hover:translate-y-0
+                            group-hover:opacity-100
+                            group-hover:scale-100
+
+                            {{ $item['active']
+                                ? 'translate-y-0 opacity-100 scale-100'
+                                : '' }}
                         "
-                    ></span>
+                    >
+
+                        <x-lucide-asterisk
+                            class="h-4 w-4 text-orange-900"
+                            stroke-width="2.5"
+                        />
+
+                    </span>
 
                 </a>
 
             @endforeach
 
         </nav>
-
 
         {{-- Ações Desktop --}}
         <div
@@ -132,13 +145,73 @@
                 {{-- Botão Login --}}
                 <a
                     href="{{ route('login') }}"
-                   class="fuzzy-bubbles-bold group inline-flex w-full items-center justify-center gap-3  bg-white px-4 py-2.5 text-md font-semibold shadow-lg shadow-orange-950/20 transition-all duration-300 hover:shadow-xl hover:shadow-orange-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 active:scale-[0.98] sm:w-auto">
-                    Entrar
-                     <x-lucide-arrow-right class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-</a>
+                    class="
+                        group
+                        inline-flex
+                        items-center
+                        justify-center
+                        rounded-full
+                        border-2
+                        border-orange-950
+                        bg-orange-950
+                        px-7
+                        py-2
+                        text-sm
+                        font-semibold
+                        text-white
+                        transition-all
+                        duration-300
+                    "
+                >
+
+                    <span
+                        class="
+                            transition-transform
+                            duration-300
+                            group-hover:-translate-y-1
+                        "
+                    >
+                        Entrar
+                    </span>
+
+                </a>
+
+                @if (Route::has('register'))
+                    {{-- Botão Cadastro --}}
+                    <a
+                        href="{{ route('register') }}"
+                        class="
+                            group
+                            inline-flex
+                            items-center
+                            justify-center
+                            rounded-full
+                            border-2
+                            border-orange-950
+                            px-7
+                            py-2
+                            text-sm
+                            font-semibold
+                            text-orange-950
+                            transition-all
+                            duration-300
+                        "
+                    >
+
+                        <span
+                            class="
+                                transition-transform
+                                duration-300
+                                group-hover:-translate-y-1
+                            "
+                        >
+                            Criar conta
+                        </span>
+
+                    </a>
+                @endif
 
             @endguest
-
 
             @auth
 
