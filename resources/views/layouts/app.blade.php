@@ -89,9 +89,6 @@
     <x-layout.footer />
 
 
-    <x-layout.bottom-navigation />
-
-
 </body>
 
 </html>
