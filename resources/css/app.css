@@ -10,3 +10,11 @@
     font-family: "Fuzzy Bubbles", sans-serif;
     font-weight: 700;
 }
+
+
+.playfair-display-title {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}

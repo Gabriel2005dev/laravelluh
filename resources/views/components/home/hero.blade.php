@@ -178,9 +178,11 @@
             gap-4
 
             md:mt-10
-            
 
             sm:flex-row
+            sm:justify-center
+
+            lg:justify-start
             ">
 
 
