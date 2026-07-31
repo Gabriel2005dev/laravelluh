@@ -1,111 +1,123 @@
 {{-- Seção de Serviços --}}
 <section class="relative w-full bg-white py-10 sm:py-14 lg:py-20">
 
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {{-- 
-            Grid Responsivo:
-            Celular: 2 colunas
-            Tablet: 4 colunas
-            Desktop: 4 colunas
-        --}}
-        <div class="grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-4 sm:gap-5 md:gap-8 lg:gap-10">
+
+    <div class="mx-auto w-full max-w-7xl px-6">
+
+    
+                  {{-- Título --}}
+<div class="mb-10 flex items-center justify-center gap-3 sm:justify-start">
+
+
+
+
+    {{-- Texto --}}
+    <div>
+
+        <h2
+            class="
+                text-xl
+                font-bold
+                tracking-tight
+                text-orange-950
+                font-title
+                text-center
+                sm:text-2xl
+            "
+        >
+            Nossos serviços
+        </h2>
+
+    </div>
+</div>
+
+        
+
+        <div class="grid grid-cols-2 mt-10 gap-x-6 gap-y-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4 lg:gap-12">
+
+        
 
             {{-- Item 1 --}}
-            <div class="flex min-w-0 flex-col items-center text-center">
+            <div class="flex flex-col items-center text-center">
 
-                {{-- Imagem --}}
-                <div class="mb-3 flex h-14 w-14 items-center justify-center sm:mb-4 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-20 lg:w-24">
+                <div class="mb-4 flex h-40 w-40 items-center justify-center sm:h-44 sm:w-44 md:h-52 md:w-52 lg:h-64 lg:w-64">
                     <img
-                        src="{{ asset('images/icons/glowing-skin.png') }}"
-                        alt="Qualidade"
+                        src="{{ asset('images/icons/beleza.png') }}"
+                        alt="Beleza"
                         class="h-full w-full object-contain"
                     >
                 </div>
 
-                {{-- Título --}}
-                <h3 class="font-serif text-xs font-bold italic text-zinc-900 sm:text-sm md:text-base lg:text-lg">
-                    Qualidade
+                <h3 class="font-title text-base font-semibold tracking-[-0.02em] text-zinc-900 sm:text-lg lg:text-2xl">
+                    Beleza
                 </h3>
 
-                {{-- Descrição --}}
-                <p class="mt-1 max-w-[130px] text-[10px] leading-snug text-zinc-500 sm:max-w-[120px] sm:text-[10px] md:max-w-[150px] md:text-xs lg:max-w-[180px] lg:text-sm">
-                    Cuidado e excelência em cada detalhe.
+                <p class="font-body mt-3 hidden max-w-sm text-sm font-normal leading-6 text-zinc-500 sm:block md:text-sm lg:text-[15px]">
+                    Realce sua beleza natural com técnicas modernas, produtos de alta qualidade e um atendimento pensado para valorizar sua autoestima em cada detalhe.
                 </p>
 
             </div>
-
 
             {{-- Item 2 --}}
-            <div class="flex min-w-0 flex-col items-center text-center">
+            <div class="flex flex-col items-center text-center">
 
-                {{-- Imagem --}}
-                <div class="mb-3 flex h-14 w-14 items-center justify-center sm:mb-4 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-20 lg:w-20">
+                <div class="mb-4 flex h-40 w-40 items-center justify-center sm:h-44 sm:w-44 md:h-52 md:w-52 lg:h-64 lg:w-64">
                     <img
-                        src="{{ asset('images/icons/hairdressing.png') }}"
-                        alt="Atendimento"
+                        src="{{ asset('images/icons/corte.png') }}"
+                        alt="Corte de Cabelo"
                         class="h-full w-full object-contain"
                     >
                 </div>
 
-                {{-- Título --}}
-                <h3 class="font-serif text-xs font-bold italic text-zinc-900 sm:text-sm md:text-base lg:text-lg">
-                    Atendimento
+                <h3 class="font-title text-base font-semibold tracking-[-0.02em] text-zinc-900 sm:text-lg lg:text-2xl">
+                    Corte de Cabelo
                 </h3>
 
-                {{-- Descrição --}}
-                <p class="mt-1 max-w-[130px] text-[10px] leading-snug text-zinc-500 sm:max-w-[120px] sm:text-[10px] md:max-w-[150px] md:text-xs lg:max-w-[180px] lg:text-sm">
-                    Um atendimento acolhedor e personalizado.
+                <p class="font-body mt-3 hidden max-w-sm text-sm font-normal leading-6 text-zinc-500 sm:block md:text-sm lg:text-[15px]">
+                    Cortes femininos personalizados que acompanham seu estilo, valorizam seus traços e proporcionam um visual elegante e cheio de personalidade.
                 </p>
 
             </div>
-
 
             {{-- Item 3 --}}
-            <div class="flex min-w-0 flex-col items-center text-center">
+            <div class="flex flex-col items-center text-center">
 
-                {{-- Imagem --}}
-                <div class="mb-3 flex h-14 w-14 items-center justify-center sm:mb-4 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-20 lg:w-20">
+                <div class="mb-4 flex h-40 w-40 items-center justify-center sm:h-44 sm:w-44 md:h-52 md:w-52 lg:h-64 lg:w-64">
                     <img
                         src="{{ asset('images/icons/manicure.png') }}"
-                        alt="Experiência"
+                        alt="Manicure"
                         class="h-full w-full object-contain"
                     >
                 </div>
 
-                {{-- Título --}}
-                <h3 class="font-serif text-xs font-bold italic text-zinc-900 sm:text-sm md:text-base lg:text-lg">
-                    Experiência
+                <h3 class="font-title text-base font-semibold tracking-[-0.02em] text-zinc-900 sm:text-lg lg:text-2xl">
+                    Manicure
                 </h3>
 
-                {{-- Descrição --}}
-                <p class="mt-1 max-w-[130px] text-[10px] leading-snug text-zinc-500 sm:max-w-[120px] sm:text-[10px] md:max-w-[150px] md:text-xs lg:max-w-[180px] lg:text-sm">
-                    Profissionalismo para valorizar sua beleza.
+                <p class="font-body mt-3 hidden max-w-sm text-sm font-normal leading-6 text-zinc-500 sm:block md:text-sm lg:text-[15px]">
+                    Unhas impecáveis com acabamento profissional, esmaltação duradoura e cuidados especiais para manter suas mãos sempre bonitas.
                 </p>
 
             </div>
 
-
             {{-- Item 4 --}}
-            <div class="flex min-w-0 flex-col items-center text-center">
+            <div class="flex flex-col items-center text-center">
 
-                {{-- Imagem --}}
-                <div class="mb-3 flex h-14 w-14 items-center justify-center sm:mb-4 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-20 lg:w-20">
+                <div class="mb-4 flex h-40 w-40 items-center justify-center sm:h-44 sm:w-44 md:h-52 md:w-52 lg:h-64 lg:w-64">
                     <img
-                        src="{{ asset('images/icons/eyebrow-pencil.png') }}"
-                        alt="Agendamento"
+                        src="{{ asset('images/icons/sobrancelha.png') }}"
+                        alt="Design de Sobrancelhas"
                         class="h-full w-full object-contain"
                     >
                 </div>
 
-                {{-- Título --}}
-                <h3 class="font-serif text-xs font-bold italic text-zinc-900 sm:text-sm md:text-base lg:text-lg">
-                    Agendamento
+                <h3 class="font-title text-base font-semibold tracking-[-0.02em] text-zinc-900 sm:text-lg lg:text-2xl">
+                    Sobrancelha
                 </h3>
 
-                {{-- Descrição --}}
-                <p class="mt-1 max-w-[130px] text-[10px] leading-snug text-zinc-500 sm:max-w-[120px] sm:text-[10px] md:max-w-[150px] md:text-xs lg:max-w-[180px] lg:text-sm">
-                    Agende seu horário de forma simples e prática.
+                <p class="font-body mt-3 hidden max-w-sm text-sm font-normal leading-6 text-zinc-500 sm:block md:text-sm lg:text-[15px]">
+                    Modelagem precisa para harmonizar seu rosto, destacar seu olhar e proporcionar um resultado natural, elegante e sofisticado.
                 </p>
 
             </div>
