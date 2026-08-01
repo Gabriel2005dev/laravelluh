@@ -12,7 +12,7 @@
         ========================= --}}
         <div class="mb-20 flex items-center justify-center lg:justify-start">
 
-            <h2 class="font-title text-xl font-bold tracking-tight text-orange-950 sm:text-3xl">
+            <h2 class="font-title text-xl  tracking-tight text-orange-950 sm:text-3xl">
            Nossos Serviços
             </h2>
 

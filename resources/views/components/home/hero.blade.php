@@ -13,13 +13,17 @@
     <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 py-12 sm:py-12 md:gap-14 lg:grid-cols-2 lg:gap-0 lg:py-6">
 
         {{-- Texto --}}
-        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
+        <div class="mx-auto max-w-full text-center lg:mx-0 lg:text-left">
 
-            <h1 class="font-title text-3xl font-bold leading-[0.92] tracking-[-0.04em] text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
-                Realce a sua beleza<br>
-                e autoestima com mais
-                confiança.
-            </h1>
+       <h1 class="font-title text-4xl leading-[0.92] tracking-[-0.04em] text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
+    Descubra Sua<br>
+    Melhor Versão<br>
+    <span class="font-destaque text-orange-950"> E Seja Incrível</span>
+</h1>
+
+
+
+
 
             <p class="font-body mx-auto mt-6 max-w-md text-sm leading-7 text-zinc-700 md:mt-8 md:text-base md:leading-8 lg:mx-0">
                 Agende seu horário e descubra uma experiência exclusiva, criada para realçar sua beleza, renovar sua autoestima e fazer você se sentir ainda mais confiante, elegante e incrível em cada momento.

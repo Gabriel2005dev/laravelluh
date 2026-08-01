@@ -85,7 +85,6 @@
                 class="
                     font-title
                     text-3xl
-                    font-bold
                     tracking-tight
                     text-white
 

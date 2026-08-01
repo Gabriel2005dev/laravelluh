@@ -12,7 +12,7 @@ x-data="
 
 "
 
-class="relative min-h-screen bg-zinc-50"
+class="relative"
 
 
 >
