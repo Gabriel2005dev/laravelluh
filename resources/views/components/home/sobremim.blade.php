@@ -4,40 +4,55 @@
     {{-- Container principal --}}
     <div
         class="
-        mx-auto
-        max-w-7xl
+            mx-auto
+            max-w-7xl
 
-        grid
-        grid-cols-1
-        lg:grid-cols-2
+            grid
+            grid-cols-1
+            lg:grid-cols-2
 
-        items-center
+            items-center
 
-        gap-12
-        lg:gap-16
+            gap-10
+            md:gap-14
+            lg:gap-16
 
-        px-6
-        py-12
-        lg:py-6
-    ">
+            px-6
+            py-12
+            md:py-16
+            lg:py-6
+        "
+    >
 
         {{-- Imagem --}}
-        <div class="relative mx-auto flex w-full justify-center lg:justify-start">
+        <div
+            class="
+                order-1
+                relative
+                mx-auto
+                flex
+                w-full
+                justify-center
+                lg:order-none
+                lg:justify-start
+            "
+        >
 
             <div
                 class="
-                relative
-                flex
-                h-[380px]
-                sm:h-[450px]
-                md:h-[520px]
-                lg:h-[500px]
+                    relative
+                    z-50
 
-                items-end
-                justify-center
-                lg:justify-start
-                z-10
-            ">
+                    flex
+                    items-end
+                    justify-center
+
+                    h-[360px]
+                    sm:h-[450px]
+                    md:h-[540px]
+                    lg:h-[500px]
+                "
+            >
 
                 <img
                     src="{{ asset('images/home/luana.png') }}"
@@ -45,7 +60,7 @@
                     class="h-full w-auto object-contain"
                 >
 
-                {{-- Overlay sutil --}}
+                {{-- Overlay --}}
                 <div class="absolute inset-0 bg-gradient-to-t from-orange-950/30 via-transparent to-transparent"></div>
 
             </div>
@@ -53,35 +68,49 @@
         </div>
 
         {{-- Conteúdo --}}
-        <div class="text-center lg:text-left">
+        <div
+            class="
+                order-2
+                flex
+                flex-col
+                items-center
+                text-center
+                lg:items-start
+                lg:text-left
+            "
+        >
 
             {{-- Título --}}
-            <div class="mb-8 flex justify-center lg:justify-start">
+            <h2
+                class="
+                    font-title
+                    text-3xl
+                    font-bold
+                    tracking-tight
+                    text-white
 
-                <h2 class="font-title text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                    Sobre mim
-                </h2>
-
-            </div>
+                    sm:text-4xl
+                "
+            >
+                Sobre mim
+            </h2>
 
             {{-- Texto --}}
             <p
                 class="
-                font-body
+                    font-body
 
-                mx-auto
-                max-w-2xl
+                    mt-8
 
-                text-sm
-                leading-7
+                    max-w-xl
 
-                text-white
+                    text-sm
+                    leading-7
+                    text-white
 
-                sm:text-base
-                sm:leading-8
-
-                lg:mx-0
-            "
+                    sm:text-base
+                    sm:leading-8
+                "
             >
                 Meu propósito é transformar cada atendimento em uma experiência única, onde beleza, cuidado e bem-estar caminham lado a lado. Acredito que cada pessoa possui uma beleza singular e merece um atendimento personalizado, pensado para valorizar sua essência, elevar sua autoestima e proporcionar momentos de confiança e satisfação.
 
@@ -94,4 +123,4 @@
 
     </div>
 
-</section>
+</section>...
