@@ -31,14 +31,14 @@
                 {{-- Botão principal --}}
                 <a href="#" class="group inline-flex w-full items-center justify-center rounded-full border border-orange-950 bg-orange-950 px-7 py-3 font-body text-sm font-semibold text-white transition-all duration-300 sm:w-auto">
                     <span class="transition-transform duration-300 group-hover:-translate-y-1">
-                        Explore nossos serviços
+                        Agende agora
                     </span>
                 </a>
 
                 {{-- Botão secundário --}}
-                <a href="#" class="group inline-flex w-full items-center justify-center rounded-full border-2 border-orange-950 px-7 py-3 font-body text-sm font-semibold text-orange-950 transition-all duration-300 hover:border-zinc-900 sm:w-auto">
+                <a href="#galeria" class="group inline-flex w-full items-center justify-center rounded-full border-2 border-orange-950 px-7 py-3 font-body text-sm font-semibold text-orange-950 transition-all duration-300 hover:border-zinc-900 sm:w-auto">
                     <span class="transition-transform duration-300 group-hover:-translate-y-1">
-                        Veja o nosso trabalho
+                        Veja o meu trabalho
                     </span>
                 </a>
 
@@ -50,7 +50,7 @@
         <div class="relative z-50 -mx-6 flex h-[420px] items-end justify-center sm:h-[500px] md:-mx-8 md:h-[560px] lg:mx-0 lg:h-[700px]">
 
             <img
-                src="{{ asset('images/home/ChatGPT Image 28 de jul. de 2026, 12_03_02.png') }}"
+                src="{{ asset('images/home/bannerhero.png') }}"
                 alt="Hero"
                 class="h-full w-auto max-w-none object-contain object-bottom"
             >

@@ -1,7 +1,7 @@
 {{-- =========================================================
     FOOTER
 ========================================================= --}}
-<footer class="relative w-full overflow-hidden bg-orange-950 text-white">
+<footer id="contato" class="relative w-full overflow-hidden bg-orange-950 text-white">
 
     {{-- Linha decorativa superior --}}
     <div class="absolute inset-x-0 top-0 h-px bg-white/20"></div>

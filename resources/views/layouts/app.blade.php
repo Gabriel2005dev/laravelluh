@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
 
@@ -60,6 +60,7 @@
     {{-- Conteúdo --}}
     <main
         class="
+        mt-20
             pb-24
             lg:pb-0
         "

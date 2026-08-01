@@ -7,9 +7,15 @@
         ],
 
         [
+            'label'  => 'Sobre',
+            'href'   => url('/#sobre'),
+            'active' => false,
+        ],
+
+        [
             'label'  => 'Serviços',
-            'href'   => route('services'),
-            'active' => request()->routeIs('services'),
+            'href'   => url('#services'),
+            'active' => false,
         ],
 
         [
@@ -18,15 +24,16 @@
             'active' => false,
         ],
 
-        [
-            'label'  => 'Sobre',
-            'href'   => url('/#sobre'),
-            'active' => false,
-        ],
-
+     
         [
             'label'  => 'Contato',
             'href'   => url('/#contato'),
+            'active' => false,
+        ],
+
+           [
+            'label'  => 'Agendar',
+            'href'   => url('/#agendar'),
             'active' => false,
         ],
     ];
@@ -43,78 +50,85 @@
     {{-- ================================================= --}}
 
     <header
+    class="
+        fixed
+        inset-x-0
+        top-0
+        z-50
+        transition-all
+        duration-300
+        bg-white
+    "
+>
+
+       <div
+    class="
+        relative
+        mx-auto
+        flex
+        h-20
+        max-w-7xl
+        items-center
+        justify-between
+        px-6
+    "
+>
+
+    {{-- Logo --}}
+    <div class="shrink-0 z-10">
+        <x-application-logo />
+    </div>
+
+    {{-- Navegação Desktop --}}
+    <div
         class="
-            sticky
-            inset-x-0
-            top-0
-            z-40
-            backdrop-blur-xl
-            transition-all
-            duration-300
+            absolute
+            left-1/2
+            -translate-x-1/2
+            hidden
+            lg:block
         "
     >
+        <x-layout.navigation-desktop
+            :nav-items="$navItems"
+        />
+    </div>
 
-        <div
+    <div class="flex items-center gap-3 z-10">
+
+        {{-- Ações Desktop --}}
+        <x-layout.auth-actions />
+
+        {{-- Botão Hambúrguer --}}
+        <button
+            type="button"
+            @click="open = true"
+            aria-label="Abrir menu"
+            :aria-expanded="open"
             class="
-                mx-auto
                 flex
-                h-20
-                max-w-7xl
+                h-11
+                w-11
+                shrink-0
                 items-center
-                justify-between
-                px-6
-           
+                justify-center
+                rounded-full
+                text-orange-950
+                transition-all
+                duration-300
+                hover:bg-orange-950/5
+                lg:hidden
             "
         >
-
-            {{-- Logo --}}
-            <div class="shrink-0">
-
-                <x-application-logo />
-
-            </div>
-
-
-            {{-- Navegação Desktop --}}
-            <x-layout.navigation-desktop
-                :nav-items="$navItems"
+            <x-lucide-menu
+                class="h-6 w-6"
+                stroke-width="2"
             />
+        </button>
 
+    </div>
 
-            {{-- Ações Desktop --}}
-            <x-layout.auth-actions />
-
-
-            {{-- Botão Hambúrguer --}}
-            <button
-                type="button"
-                @click="open = true"
-                aria-label="Abrir menu"
-                :aria-expanded="open"
-                class="
-                    flex
-                    h-11
-                    w-11
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-full
-                    text-orange-950
-                    transition-all
-                    duration-300
-                    hover:bg-orange-950/5
-                    lg:hidden
-                "
-            >
-
-                <x-lucide-menu
-                    class="h-6 w-6"
-                    stroke-width="2"
-                />
-
-            </button>
-
-        </div>
+</div>
 
     </header>
 
