@@ -33,8 +33,8 @@
 
            [
             'label'  => 'Agendar',
-            'href'   => url('/#agendar'),
-            'active' => false,
+            'href'   => route('agendar'),
+            'active' => request()->routeIs('agendar'),
         ],
     ];
 @endphp

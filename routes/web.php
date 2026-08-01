@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.home')->name('home');
 
-Route::view('/servicos', 'pages.services')->name('services');
+Route::view('/agendamento', 'pages.agendamento')->name('agendar');
 
 
 /*

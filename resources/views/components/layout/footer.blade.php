@@ -209,8 +209,7 @@
                         <x-fas-location-dot class="h-4 w-4 shrink-0" />
 
                         <span class="text-sm">
-                            Rua Profeta Jeremias, 10 <br>
-                            Parque Império, Duque de Caxias - RJ
+                            Rua Profeta Jeremias, 10
                         </span>
 
                     </div>
