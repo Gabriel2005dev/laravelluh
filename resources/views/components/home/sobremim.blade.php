@@ -89,7 +89,7 @@
                     tracking-tight
                     text-white
 
-                    sm:text-4xl
+                    sm:text-3xl
                 "
             >
                 Sobre mim

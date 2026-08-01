@@ -15,7 +15,7 @@
         {{-- Texto --}}
         <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
 
-            <h1 class="font-title text-4xl font-bold leading-[0.92] tracking-[-0.04em] text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 class="font-title text-3xl font-bold leading-[0.92] tracking-[-0.04em] text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
                 Realce a sua beleza<br>
                 e autoestima com mais
                 confiança.
