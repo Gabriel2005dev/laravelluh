@@ -106,9 +106,9 @@ FLOATING CATEGORY MENU COMPONENT
                     CATEGORIA PRINCIPAL
                 ====================================================== --}}
 
-                <button @click="active === '{{ $category['id'] }}' ? active = null : active = '{{ $category['id'] }}'" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-200 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
+                <button @click="active === '{{ $category['id'] }}' ? active = null : active = '{{ $category['id'] }}'" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-400 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
 
-                    <img src="{{ asset('images/icons/'.$category['icon']) }}" alt="{{ $category['name'] }}" class="h-5 w-5 object-contain transition-transform duration-500 ease-out will-change-transform  sm:h-5 sm:w-5">
+                    <img src="{{ asset('images/icons/'.$category['icon']) }}" alt="{{ $category['name'] }}" class="h-5 w-5  object-contain transition-transform duration-500 ease-out will-change-transform  sm:h-5 sm:w-5">
 
                 </button>
 
@@ -125,7 +125,7 @@ FLOATING CATEGORY MENU COMPONENT
 
                         @foreach($category['items'] as $item)
 
-                            <button @click="categoriaSelecionada='{{ $category['id'] }}'; subcategoriaSelecionada='{{ $item['id'] }}'; active=null;" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-200  sm:h-9 sm:w-9 lg:h-10 lg:w-10">
+                            <button @click="categoriaSelecionada='{{ $category['id'] }}'; subcategoriaSelecionada='{{ $item['id'] }}'; active=null;" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-400  sm:h-9 sm:w-9 lg:h-10 lg:w-10">
 
 
                                 <img src="{{ asset('images/icons/'.$item['icon']) }}" alt="{{ $item['name'] }}" class="h-5 w-5 object-contain transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.08] sm:h-5 sm:w-5">

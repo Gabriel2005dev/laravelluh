@@ -15,22 +15,43 @@
         {{-- Texto --}}
         <div class="mx-auto max-w-full text-center lg:mx-0 lg:text-left">
 
-       <h1 class="font-title text-4xl leading-[0.92] tracking-[-0.04em] text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
+      <h1 class="font-title text-6xl leading-[0.82] text-zinc-900 sm:text-5xl md:text-6xl lg:text-8xl">
     Descubra Sua<br>
     Melhor Versão<br>
-    <span class="font-destaque text-orange-950"> E Seja Incrível</span>
+
+    <span class="relative inline-block -rotate-3 font-destaque text-orange-950 lg:text-7xl">
+        E Seja Incrível
+
+
+        {{-- Risco orgânico --}}
+        <svg
+            class="absolute -bottom-4 left-1/2 w-[105%] -translate-x-1/2"
+            viewBox="0 0 300 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+        >
+            <path
+                d="M8 19C65 7 126 13 178 15C225 17 265 14 292 8"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+            />
+        </svg>
+    </span>
 </h1>
 
 
 
 
 
+
             <p class="font-body mx-auto mt-6 max-w-md text-sm leading-7 text-zinc-700 md:mt-8 md:text-base md:leading-8 lg:mx-0">
-                Agende seu horário e descubra uma experiência exclusiva, criada para realçar sua beleza, renovar sua autoestima e fazer você se sentir ainda mais confiante, elegante e incrível em cada momento.
+                Agende seu horário e descubra uma experiência exclusiva, criada para realçar sua beleza
             </p>
 
             {{-- Botões --}}
-            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center md:mt-10 lg:justify-start">
+            <div class="mt-16 flex flex-col gap-4 sm:flex-row sm:justify-center md:mt-10 lg:justify-start">
 
                 {{-- Botão principal --}}
                 <a href="#" class="group inline-flex w-full items-center justify-center rounded-full border border-orange-950 bg-orange-950 px-7 py-3 font-body text-sm font-semibold text-white transition-all duration-300 sm:w-auto">
