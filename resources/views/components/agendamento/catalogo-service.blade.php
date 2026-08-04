@@ -1,10 +1,9 @@
 <section
 class="
-pt-36
+
 pb-20
 "
 >
-
 
 <div
 class="
@@ -17,10 +16,12 @@ px-6
 
 <h1
 class="
+flex
 text-3xl
 font-semibold
 text-zinc-900
-mb-10
+p-5
+text-center
 "
 >
 Escolha seu serviço
@@ -34,8 +35,10 @@ class="
 grid
 grid-cols-1
 sm:grid-cols-2
-lg:grid-cols-3
+lg:grid-cols-2
 gap-6
+
+
 "
 >
 
