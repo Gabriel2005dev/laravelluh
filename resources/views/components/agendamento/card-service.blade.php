@@ -1,134 +1,281 @@
 <div
     class="
         relative
+        mt-10
         overflow-visible
         rounded-3xl
         bg-white
         transition-all
         duration-300
-        mt-10
-
-
     "
 >
 
+@php
+
+    /*
+    |--------------------------------------------------------------------------
+    | ÍCONES DAS SUBCATEGORIAS
+    |--------------------------------------------------------------------------
+    |
+    | O ícone é definido automaticamente de acordo com a subcategoria
+    | recebida pelo serviço.
+    |
+    */
+
+    $subcategoryIcons = [
+
+        'hair-cut' => 'cabelo-corte.svg',
+
+        'hair-brush' => 'cabelo-prancha.svg',
+
+        'eyelashes' => 'olho-cilios.svg',
+
+        'eyebrow' => 'olho-sobrancelha.svg',
+
+        'nails-polish' => 'unha-esmalte.svg',
+
+        'make-social' => 'makeup-brush.svg',
+
+    ];
+
+    $serviceIcon = $subcategoryIcons[$service['subcategory']] ?? null;
+
+@endphp
 
 
-    {{-- Ícone da categoria --}}
-    <div
-        class="
-            absolute
-            left-1/2
-            top-0
-            -translate-x-1/2
-            -translate-y-1/2
+{{-- =====================================================
+    ÍCONE DA SUBCATEGORIA
+====================================================== --}}
 
-            flex
-            h-16
-            w-16
-            items-center
-            justify-center
-    
+<div
+    class="
+        absolute
+        left-1/2
+        top-0
+        z-20
+        flex
+        h-16
+        w-16
+        -translate-x-1/2
+        -translate-y-1/2
+        items-center
+        justify-center
+        rounded-full
 
-            rounded-full
-            border
-            border-orange-950
-            bg-white
-            z-20
-        "
-    >
+        bg-white
+    "
+>
 
+    @if($serviceIcon)
 
-    </div>
-
-    
-
-    <div class="grid grid-cols-2 gap-3">
-        
-
-        {{-- Imagem --}}
-        <div class="h-90 rounded-3xl bg-rose-200  border border-rose-200 ">
-            
-
-            {{-- Basta trocar o nome da imagem abaixo --}}
-            <img
-                src="{{ asset('images/home/bannerhero.png') }}"
-                alt="{{ $service['name'] }}"
-                class="
-                    w-full
-                    h-full
-                    object-cover
-                    rounded-l-3xl
-                "
-            >
-
-        </div>
-
-        {{-- Conteúdo --}}
-<div class=" rounded-3xl border border-orange-950">
-
-    <div class="flex h-full flex-col p-6">
-
-        {{-- Título --}}
-        <h3 class="text-2xl font-semibold text-zinc-900">
-            {{ $service['name'] }}
-        </h3>
-
-        {{-- Descrição --}}
-        <p class="mt-2 text-sm leading-6 text-zinc-600">
-            {{ $service['description'] }}
-        </p>
-
-        {{-- Informações --}}
-        <div class="mt-6 space-y-3">
-
-            <div class="flex items-center justify-between rounded-xl border border-zinc-200 px-4 py-3">
-                <span class="text-sm font-medium text-zinc-500">
-                    Duração
-                </span>
-
-                <span class="text-sm font-semibold text-zinc-900">
-                    {{ $service['time'] }}
-                </span>
-            </div>
-
-            <div class="flex items-center justify-between rounded-xl border border-zinc-200 px-4 py-3">
-                <span class="text-sm font-medium text-zinc-500">
-                    Preço
-                </span>
-
-                <span class="text-xl font-bold text-orange-950">
-                    {{ $service['price'] }}
-                </span>
-            </div>
-
-        </div>
-
-        {{-- Botão --}}
-        <a
-            href="#agendamento"
+        <img
+            src="{{ asset('images/icons/' . $serviceIcon) }}"
+            alt="Ícone de {{ $service['name'] }}"
             class="
-                mt-auto
-                w-full
-                rounded-xl
-                bg-orange-950
-                py-3
-                text-center
-                text-sm
-                font-semibold
-                text-white
-                transition
-                hover:bg-orange-900
+                h-8
+                w-8
+                object-contain
             "
         >
-            Agendar agora
-        </a>
 
-    </div>
+    @endif
 
 </div>
 
 
+{{-- =====================================================
+    CONTEÚDO PRINCIPAL DO CARD
+====================================================== --}}
+
+<div class="grid grid-cols-2 gap-3">
+
+
+    {{-- =====================================================
+        IMAGEM
+    ====================================================== --}}
+
+    <div
+        class="
+            h-90
+            overflow-hidden
+            rounded-3xl
+            border
+            border-rose-200
+            bg-rose-200
+        "
+    >
+
+        <img
+            src="{{ asset('images/home/bannerhero.png') }}"
+            alt="{{ $service['name'] }}"
+            class="
+                h-full
+                w-full
+                rounded-l-3xl
+                object-cover
+            "
+        >
+
     </div>
+
+
+    {{-- =====================================================
+        CONTEÚDO
+    ====================================================== --}}
+
+    <div class="rounded-3xl bg-zinc-100">
+
+        <div class="flex h-full flex-col p-4">
+
+
+            {{-- =====================================================
+                CABEÇALHO
+            ====================================================== --}}
+
+            <div class="flex items-center justify-end gap-4">
+
+                {{-- Duração --}}
+
+                <span
+                    class="
+                        shrink-0
+                        rounded-full
+                        border
+                        border-zinc-300
+                        px-2
+                        py-1
+                        text-sm
+                        font-medium
+                        text-zinc-500
+                    "
+                >
+                    {{ $service['time'] }}
+                </span>
+
+            </div>
+
+
+            {{-- =====================================================
+                CONTEÚDO
+            ====================================================== --}}
+
+            <div class="mt-6">
+
+                {{-- Título --}}
+
+                <h4
+                    class="
+                        font-title
+                        text-3xl
+                        font-semibold
+                        leading-tight
+                        text-zinc-900
+                    "
+                >
+                    {{ $service['name'] }}
+                </h4>
+
+
+                {{-- Descrição --}}
+
+                <p
+                    class="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-zinc-600
+                    "
+                >
+                    {{ $service['description'] }}
+                </p>
+
+            </div>
+
+
+            {{-- =====================================================
+                RODAPÉ
+            ====================================================== --}}
+
+            <div
+                class="
+                    mt-auto
+                    flex
+                    items-end
+                    justify-between
+                    gap-4
+                    pt-8
+                "
+            >
+
+                {{-- =================================================
+                    BOTÃO AGENDAR
+                ================================================== --}}
+
+                <a
+                    @click="servicoSelecionado = {{ Js::from($service) }}"
+                    class="
+                        group
+                        inline-flex
+                        items-center
+                        justify-center
+                        rounded-full
+                        border-2
+                        border-orange-950
+                        bg-orange-950
+                        px-6
+                        py-2
+                        text-xs
+                        font-semibold
+                        text-white
+                        transition-all
+                        duration-300
+                    "
+                >
+
+                    <span
+                        class="
+                            transition-transform
+                            duration-300
+                            group-hover:-translate-y-1
+                        "
+                    >
+                        Agendar agora
+                    </span>
+
+                </a>
+
+
+                {{-- =================================================
+                    PREÇO
+                ================================================== --}}
+
+                <span
+                    class="
+                        flex
+                        flex-col
+                        items-center
+                        justify-center
+                        font-bold
+                        text-orange-950
+                    "
+                >
+
+                    <span class="text-2xl">
+                        R$
+                    </span>
+
+                    <span class="text-2xl">
+                        {{ str_replace('R$', '', $service['price']) }}
+                    </span>
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </div>
