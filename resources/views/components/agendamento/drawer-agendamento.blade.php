@@ -14,7 +14,10 @@
 
 <div
 
+@abrir-drawer.window="abrirDrawer($event.detail.service)"
+
 x-show="drawer.aberto"
+
 x-cloak
 
 class="

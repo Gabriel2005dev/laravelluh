@@ -2,22 +2,6 @@ export default () => ({
 
 
     /* ==========================================================
-        CATÁLOGO
-    ========================================================== */
-
-
-    active: null,
-
-
-    categoriaSelecionada: 'cabelo',
-
-
-    subcategoriaSelecionada: 'cabelo-finalizacao',
-
-
-
-
-    /* ==========================================================
         DRAWER
     ========================================================== */
 
@@ -152,9 +136,7 @@ export default () => ({
 
         if(!this.podeAvancar()){
 
-
             return;
-
 
         }
 
@@ -285,7 +267,6 @@ export default () => ({
 
 
     },
-
 
 
 });

@@ -120,8 +120,16 @@ class="h-full w-full rounded-l-3xl object-cover object-center transition-transfo
 {{-- BOTÃO --}}
 
 <a
-@click="abrirDrawer({{ Js::from($service) }})"
-class="group flex items-center justify-center rounded-full border-2 border-orange-950 bg-orange-950 px-3 py-2 text-[10px] font-semibold text-white transition-all duration-300 hover:bg-transparent hover:text-orange-950 sm:px-4 sm:text-xs lg:px-6"
+
+@click="$dispatch(
+    'abrir-drawer',
+    {
+        service: {{ Js::from($service) }}
+    }
+)"
+
+class="group flex cursor-pointer items-center justify-center rounded-full border-2 border-orange-950 bg-orange-950 px-3 py-2 text-[10px] font-semibold text-white transition-all duration-300 hover:bg-transparent hover:text-orange-950 sm:px-4 sm:text-xs lg:px-6"
+
 >
 
 <span class="transition-transform duration-300 group-hover:-translate-y-1">
