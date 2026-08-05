@@ -179,6 +179,13 @@ z-[70]
 
             <template x-if="drawer.etapa === 4">
 
+                <x-agendamento.drawer.drawer-step-auth />
+
+            </template>
+
+
+            <template x-if="drawer.etapa === 5">
+
                 <x-agendamento.drawer.drawer-step-confirm />
 
             </template>
