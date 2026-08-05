@@ -1,204 +1,199 @@
-<div>
-
+{{-- ===========================================================
+| DRAWER DE AGENDAMENTO
+|--------------------------------------------------------------------------
+| Este componente é responsável por:
+|
+| • Controlar abertura e fechamento do Drawer
+| • Controlar as etapas do agendamento
+| • Armazenar os dados temporários do usuário
+| • Renderizar os componentes de cada etapa
+|
+| Todo o estado do Drawer fica centralizado aqui.
+|--------------------------------------------------------------------------
+--}}
 
 <div
 
-x-show="servicoSelecionado"
-
+x-show="drawer.aberto"
 x-cloak
 
 class="
 fixed
 inset-0
-bg-black/40
-z-[60]
-"
-
-@click="servicoSelecionado=null"
-
-></div>
-
-
-
-<div
-
-x-show="servicoSelecionado"
-
-x-transition
-
-class="
-fixed
-right-0
-top-0
-h-full
-w-full
-sm:w-[450px]
-bg-white
 z-[70]
-shadow-2xl
-p-6
 "
 
 >
 
 
-<button
+    {{-- ===========================================================
+        OVERLAY
+    ============================================================ --}}
 
-@click="servicoSelecionado=null"
+    <div
 
-class="
-text-zinc-500
-"
+        class="
+        absolute
+        inset-0
+        bg-black/50
+        backdrop-blur-[2px]
+        "
 
->
+        @click="drawer.aberto = false"
 
-Fechar
-
-</button>
-
-
-
-<div class="mt-10">
-
-
-<h2
-class="
-text-2xl
-font-semibold
-"
->
-
-Agendar serviço
-
-</h2>
+    ></div>
 
 
 
-<template x-if="servicoSelecionado">
+    {{-- ===========================================================
+        DRAWER
+    ============================================================ --}}
+
+    <aside
+
+        x-show="drawer.aberto"
+
+        x-transition:enter="
+        transition
+        ease-out
+        duration-300
+        "
+
+        x-transition:enter-start="
+        translate-x-full
+        "
+
+        x-transition:enter-end="
+        translate-x-0
+        "
+
+        x-transition:leave="
+        transition
+        ease-in
+        duration-200
+        "
+
+        x-transition:leave-start="
+        translate-x-0
+        "
+
+        x-transition:leave-end="
+        translate-x-full
+        "
+
+        class="
+        absolute
+        right-0
+        top-0
+
+        flex
+        h-screen
+        w-full
+
+        flex-col
+
+        overflow-hidden
+
+        bg-white
+
+        shadow-2xl
+
+        sm:max-w-[470px]
+        "
+
+    >
 
 
-<div class="mt-6">
+        {{-- ===========================================================
+            HEADER
+        ============================================================ --}}
+
+        <x-agendamento.drawer.drawer-header />
 
 
-<h3
+        {{-- ===========================================================
+            STEPS
+        ============================================================ --}}
 
-class="
-font-medium
-text-lg
-"
-
-x-text="servicoSelecionado.name"
-
-></h3>
+        <x-agendamento.drawer.drawer-steps />
 
 
+        {{-- ===========================================================
+            CONTEÚDO
+        ============================================================ --}}
 
-<div class="mt-8">
+        <main
+
+            class="
+            flex-1
+            overflow-y-auto
+            px-6
+            py-8
+            "
+
+        >
 
 
-<label class="text-sm">
+            {{-- =======================================================
+                ETAPA 1
+            ======================================================== --}}
 
-Escolha a data
+            <template x-if="drawer.etapa === 1">
 
-</label>
+                <x-agendamento.drawer.drawer-step-date />
+
+            </template>
 
 
-<input
 
-type="date"
+            {{-- =======================================================
+                ETAPA 2
+            ======================================================== --}}
 
-class="
-mt-2
-w-full
-rounded-xl
-border-zinc-300
-"
+            <template x-if="drawer.etapa === 2">
 
->
+                <x-agendamento.drawer.drawer-step-time />
+
+            </template>
+
+
+
+            {{-- =======================================================
+                ETAPA 3
+            ======================================================== --}}
+
+            <template x-if="drawer.etapa === 3">
+
+                <x-agendamento.drawer.drawer-step-payment />
+
+            </template>
+
+
+
+            {{-- =======================================================
+                ETAPA 4
+            ======================================================== --}}
+
+            <template x-if="drawer.etapa === 4">
+
+                <x-agendamento.drawer.drawer-step-confirm />
+
+            </template>
+
+
+        </main>
+
+
+
+        {{-- ===========================================================
+            FOOTER
+        ============================================================ --}}
+
+        <x-agendamento.drawer.drawer-footer />
+
+
+    </aside>
 
 
 </div>
 
-
-
-<div class="mt-6">
-
-
-<label class="text-sm">
-
-Horário disponível
-
-</label>
-
-
-<select
-
-class="
-mt-2
-w-full
-rounded-xl
-border-zinc-300
-"
-
->
-
-<option>
-
-09:00
-
-</option>
-
-<option>
-
-10:30
-
-</option>
-
-
-<option>
-
-14:00
-
-</option>
-
-
-</select>
-
-
-</div>
-
-
-
-<button
-
-class="
-mt-10
-w-full
-rounded-full
-bg-orange-600
-py-3
-text-white
-"
-
->
-
-Continuar
-
-</button>
-
-
-
-</div>
-
-
-</template>
-
-
-
-</div>
-
-
-</div>
-
-
-</div>

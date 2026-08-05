@@ -6,91 +6,79 @@ FLOATING CATEGORY MENU COMPONENT
 
 <div class="mx-auto flex max-w-7xl justify-end px-6 py-3">
 
-    <div x-data="{ active: null }" @click.outside="active = null" class="pointer-events-auto flex items-center gap-3 rounded-full border border-zinc-300 bg-white p-1.5 shadow-sm backdrop-blur-xl">
+    <div @click.outside="active = null" class="pointer-events-auto flex items-center gap-3 rounded-full border border-zinc-300 bg-white p-1.5 shadow-sm backdrop-blur-xl">
 
         @php
 
         $categories = [
 
             [
-                'id' => 'hair',
+                'id' => 'cabelo',
                 'icon' => 'cabelo.svg',
-                'name' => 'Cabelo',
+                'name' => 'cabelo',
 
                 'items' => [
 
+                   
                     [
-                        'id' => 'hair-cut',
-                        'name' => 'Corte',
-                        'icon' => 'cabelo-corte.svg'
+                        'id' => 'cabelo-hidratacao',
+                        'name' => 'cabelo-hidratação',
+                        'icon' => 'cabelo-hidratacao.svg'
+                    ],
+
+                      [
+                        'id' => 'cabelo-alisamento',
+                        'name' => 'cabelo-alisamento',
+                        'icon' => 'cabelo-alisamento.svg'
                     ],
 
                     [
-                        'id' => 'hair-brush',
-                        'name' => 'Escova',
-                        'icon' => 'cabelo-prancha.svg'
-                    ]
+                        'id' => 'cabelo-coloracao',
+                        'name' => 'cabelo-coloracao',
+                        'icon' => 'cabelo-coloracao.svg'
+                    ],
+
+                    [
+                        'id' => 'cabelo-finalizacao',
+                        'name' => 'cabelo-finalização',
+                        'icon' => 'cabelo-finalizacao.svg'
+                    ],
+
+
 
                 ]
 
             ],
 
             [
-                'id' => 'eyes',
-                'icon' => 'olho.svg',
-                'name' => 'Olhos',
-
-                'items' => [
-
-                    [
-                        'id' => 'eyelashes',
-                        'name' => 'Cílios',
-                        'icon' => 'olho-cilios.svg'
-                    ],
-
-                    [
-                        'id' => 'eyebrow',
-                        'name' => 'Sobrancelha',
-                        'icon' => 'olho-sobrancelha.svg'
-                    ]
-
-                ]
-
-            ],
-
-            [
-                'id' => 'nails',
+                'id' => 'unha',
                 'icon' => 'unha.svg',
-                'name' => 'Unhas',
+                'name' => 'unha',
 
                 'items' => [
 
                     [
-                        'id' => 'nails-polish',
-                        'name' => 'Esmaltação',
-                        'icon' => 'unha-esmalte.svg'
+                        'id' => 'unha-manicure',
+                        'name' => 'unha-manicure',
+                        'icon' => 'unha-manicure.svg'
+                    ],
+
+                    [
+                        'id' => 'unha-alongamento',
+                        'name' => 'unha-alongamento',
+                        'icon' => 'unha-alongamento.svg'
+                    ],
+
+                    [
+                        'id' => 'unha-extras',
+                        'name' => 'unha-extras',
+                        'icon' => 'unha-extras.svg'
                     ]
 
                 ]
 
             ],
 
-            [
-                'id' => 'makeup',
-                'icon' => 'makeup-brush.svg',
-                'name' => 'Maquiagem',
-
-                'items' => [
-
-                    [
-                        'id' => 'make-social',
-                        'name' => 'Social',
-                        'icon' => 'makeup-brush.svg'
-                    ]
-
-                ]
-
-            ]
 
         ];
 
@@ -106,9 +94,9 @@ FLOATING CATEGORY MENU COMPONENT
                     CATEGORIA PRINCIPAL
                 ====================================================== --}}
 
-                <button @click="active === '{{ $category['id'] }}' ? active = null : active = '{{ $category['id'] }}'" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-400 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
+                <button @click="active === '{{ $category['id'] }}' ? active = null : active = '{{ $category['id'] }}'" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-200 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
 
-                    <img src="{{ asset('images/icons/'.$category['icon']) }}" alt="{{ $category['name'] }}" class="h-5 w-5  object-contain transition-transform duration-500 ease-out will-change-transform  sm:h-5 sm:w-5">
+                    <img src="{{ asset('images/icons/icons-category/'.$category['icon']) }}" alt="{{ $category['name'] }}" class="h-5 w-5  object-contain transition-transform duration-500 ease-out will-change-transform  sm:h-5 sm:w-5">
 
                 </button>
 
@@ -125,10 +113,10 @@ FLOATING CATEGORY MENU COMPONENT
 
                         @foreach($category['items'] as $item)
 
-                            <button @click="categoriaSelecionada='{{ $category['id'] }}'; subcategoriaSelecionada='{{ $item['id'] }}'; active=null;" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-400  sm:h-9 sm:w-9 lg:h-10 lg:w-10">
+                            <button @click="categoriaSelecionada='{{ $category['id'] }}'; subcategoriaSelecionada='{{ $item['id'] }}'; active=null;" class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-400 ease-out hover:scale-[1.04] hover:bg-rose-200  sm:h-9 sm:w-9 lg:h-10 lg:w-10">
 
 
-                                <img src="{{ asset('images/icons/'.$item['icon']) }}" alt="{{ $item['name'] }}" class="h-5 w-5 object-contain transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.08] sm:h-5 sm:w-5">
+                                <img src="{{ asset('images/icons/icons-subcategory/'.$item['icon']) }}" alt="{{ $item['name'] }}" class="h-5 w-5 object-contain transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.08] sm:h-5 sm:w-5">
 
 
                             </button>

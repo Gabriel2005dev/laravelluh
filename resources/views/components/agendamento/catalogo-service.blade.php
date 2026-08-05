@@ -8,7 +8,7 @@
     class="
         mx-auto
         max-w-7xl
-        px-6
+        px-2
     "
 >
 
@@ -38,7 +38,7 @@
         class="
             grid
             grid-cols-1
-            gap-6
+            gap-3
             sm:grid-cols-2
             lg:grid-cols-2
         "
@@ -46,290 +46,293 @@
 
         @php
 
-            $services = [
+           $services = [
 
-                /*
-                |--------------------------------------------------------------------------
-                | CABELO - CORTE
-                |--------------------------------------------------------------------------
-                */
+    /*
+    |--------------------------------------------------------------------------
+    | CABELO - FINALIZAÇÃO
+    |--------------------------------------------------------------------------
+    */
 
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-cut',
-                    'image' => 'corte-feminino.jpg',
-                    'name' => 'Corte Feminino',
-                    'description' => 'Corte personalizado feminino',
-                    'time' => '40 min',
-                    'price' => 'R$80'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-finalizacao',
+        'image' => 'escova-prancha.jpg',
+        'name' => 'Escova e Prancha',
+        'description' => 'Finalização com escova e prancha',
+        'time' => '40 min',
+        'price' => 'A partir de R$35'
+    ],
 
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-cut',
-                    'image' => 'corte-masculino.jpg',
-                    'name' => 'Corte Masculino',
-                    'description' => 'Corte moderno masculino',
-                    'time' => '30 min',
-                    'price' => 'R$50'
-                ],
-
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-cut',
-                    'image' => 'corte-infantil.jpg',
-                    'name' => 'Corte Infantil',
-                    'description' => 'Corte para crianças',
-                    'time' => '30 min',
-                    'price' => 'R$40'
-                ],
-
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-cut',
-                    'image' => 'corte-hidratacao.jpg',
-                    'name' => 'Corte + Hidratação',
-                    'description' => 'Corte com tratamento capilar',
-                    'time' => '1h20',
-                    'price' => 'R$130'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-finalizacao',
+        'image' => 'corte.jpg',
+        'name' => 'Corte',
+        'description' => 'Corte personalizado',
+        'time' => '40 min',
+        'price' => 'R$35'
+    ],
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | CABELO - ESCOVA
-                |--------------------------------------------------------------------------
-                */
 
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-brush',
-                    'image' => 'escova-lisa.jpg',
-                    'name' => 'Escova Lisa',
-                    'description' => 'Escova tradicional',
-                    'time' => '40 min',
-                    'price' => 'R$60'
-                ],
+    /*
+    |--------------------------------------------------------------------------
+    | CABELO - TRATAMENTOS
+    |--------------------------------------------------------------------------
+    */
 
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-brush',
-                    'image' => 'escova-modelada.jpg',
-                    'name' => 'Escova Modelada',
-                    'description' => 'Modelagem dos fios',
-                    'time' => '50 min',
-                    'price' => 'R$80'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-hidratacao',
+        'image' => 'hidratacao.jpg',
+        'name' => 'Hidratação',
+        'description' => 'Tratamento profundo dos fios',
+        'time' => '40 min',
+        'price' => 'A partir de R$40'
+    ],
 
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-brush',
-                    'image' => 'escova-babyliss.jpg',
-                    'name' => 'Escova + Babyliss',
-                    'description' => 'Finalização especial',
-                    'time' => '1h',
-                    'price' => 'R$100'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-hidratacao',
+        'image' => 'nutricao.jpg',
+        'name' => 'Nutrição',
+        'description' => 'Reposição de nutrientes capilares',
+        'time' => '50 min',
+        'price' => 'A partir de R$45'
+    ],
 
-                [
-                    'category' => 'hair',
-                    'subcategory' => 'hair-brush',
-                    'image' => 'escova-premium.jpg',
-                    'name' => 'Escova Premium',
-                    'description' => 'Tratamento e finalização',
-                    'time' => '1h20',
-                    'price' => 'R$130'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-hidratacao',
+        'image' => 'reconstrucao.jpg',
+        'name' => 'Reconstrução',
+        'description' => 'Recuperação da fibra capilar',
+        'time' => '1h',
+        'price' => 'A partir de R$50'
+    ],
 
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-hidratacao',
+        'image' => 'cauterizacao.jpg',
+        'name' => 'Cauterização',
+        'description' => 'Selagem e recuperação dos fios',
+        'time' => '1h20',
+        'price' => 'A partir de R$60'
+    ],
 
-                /*
-                |--------------------------------------------------------------------------
-                | OLHOS - CÍLIOS
-                |--------------------------------------------------------------------------
-                */
-
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyelashes',
-                    'image' => 'cilios-classico.jpg',
-                    'name' => 'Alongamento Clássico',
-                    'description' => 'Cílios fio a fio',
-                    'time' => '2h',
-                    'price' => 'R$150'
-                ],
-
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyelashes',
-                    'image' => 'cilios-volume.jpg',
-                    'name' => 'Volume Brasileiro',
-                    'description' => 'Volume com acabamento natural',
-                    'time' => '2h30',
-                    'price' => 'R$180'
-                ],
-
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyelashes',
-                    'image' => 'cilios-russo.jpg',
-                    'name' => 'Volume Russo',
-                    'description' => 'Maior volume e destaque',
-                    'time' => '3h',
-                    'price' => 'R$220'
-                ],
-
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyelashes',
-                    'image' => 'cilios-manutencao.jpg',
-                    'name' => 'Manutenção Cílios',
-                    'description' => 'Reposição dos fios',
-                    'time' => '1h',
-                    'price' => 'R$90'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-hidratacao',
+        'image' => 'cronograma-capilar.jpg',
+        'name' => 'Cronograma Capilar',
+        'description' => 'Tratamento completo personalizado',
+        'time' => '2h',
+        'price' => 'A partir de R$130'
+    ],
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | OLHOS - SOBRANCELHA
-                |--------------------------------------------------------------------------
-                */
 
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyebrow',
-                    'image' => 'sobrancelha-design.jpg',
-                    'name' => 'Design de Sobrancelha',
-                    'description' => 'Modelagem personalizada',
-                    'time' => '30 min',
-                    'price' => 'R$40'
-                ],
+    /*
+    |--------------------------------------------------------------------------
+    | CABELO - COLORAÇÃO
+    |--------------------------------------------------------------------------
+    */
 
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyebrow',
-                    'image' => 'sobrancelha-henna.jpg',
-                    'name' => 'Design com Henna',
-                    'description' => 'Design com pigmentação',
-                    'time' => '40 min',
-                    'price' => 'R$60'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-coloracao',
+        'image' => 'coloracao.jpg',
+        'name' => 'Coloração',
+        'description' => 'Transformação da cor dos fios',
+        'time' => '2h',
+        'price' => 'A partir de R$30'
+    ],
 
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyebrow',
-                    'image' => 'brow-lamination.jpg',
-                    'name' => 'Brow Lamination',
-                    'description' => 'Alinhamento dos fios',
-                    'time' => '1h',
-                    'price' => 'R$120'
-                ],
-
-                [
-                    'category' => 'eyes',
-                    'subcategory' => 'eyebrow',
-                    'image' => 'sobrancelha-manutencao.jpg',
-                    'name' => 'Manutenção',
-                    'description' => 'Manutenção do design',
-                    'time' => '20 min',
-                    'price' => 'R$30'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-coloracao',
+        'image' => 'matizador.jpg',
+        'name' => 'Matizador',
+        'description' => 'Correção e realce da tonalidade',
+        'time' => '40 min',
+        'price' => 'A partir de R$40'
+    ],
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | UNHAS - ESMALTAÇÃO
-                |--------------------------------------------------------------------------
-                */
 
-                [
-                    'category' => 'nails',
-                    'subcategory' => 'nails-polish',
-                    'image' => 'unha-tradicional.jpg',
-                    'name' => 'Esmaltação Tradicional',
-                    'description' => 'Esmalte clássico',
-                    'time' => '40 min',
-                    'price' => 'R$35'
-                ],
+    /*
+    |--------------------------------------------------------------------------
+    | CABELO - ALISAMENTOS
+    |--------------------------------------------------------------------------
+    */
 
-                [
-                    'category' => 'nails',
-                    'subcategory' => 'nails-polish',
-                    'image' => 'unha-francesinha.jpg',
-                    'name' => 'Francesinha',
-                    'description' => 'Esmaltação francesa',
-                    'time' => '50 min',
-                    'price' => 'R$50'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-alisamento',
+        'image' => 'botox-formol.jpg',
+        'name' => 'Botox com Formol',
+        'description' => 'Redução de volume e alinhamento',
+        'time' => '2h',
+        'price' => 'A partir de R$70'
+    ],
 
-                [
-                    'category' => 'nails',
-                    'subcategory' => 'nails-polish',
-                    'image' => 'unha-gel.jpg',
-                    'name' => 'Esmaltação em Gel',
-                    'description' => 'Maior durabilidade',
-                    'time' => '1h',
-                    'price' => 'R$80'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-alisamento',
+        'image' => 'botox-sem-formol.jpg',
+        'name' => 'Botox sem Formol',
+        'description' => 'Alinhamento sem formol',
+        'time' => '2h',
+        'price' => 'A partir de R$70'
+    ],
 
-                [
-                    'category' => 'nails',
-                    'subcategory' => 'nails-polish',
-                    'image' => 'unha-blindagem.jpg',
-                    'name' => 'Blindagem',
-                    'description' => 'Proteção das unhas',
-                    'time' => '1h20',
-                    'price' => 'R$100'
-                ],
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-alisamento',
+        'image' => 'progressiva-formol.jpg',
+        'name' => 'Progressiva com Formol',
+        'description' => 'Alisamento prolongado',
+        'time' => '3h',
+        'price' => 'A partir de R$100'
+    ],
+
+    [
+        'category' => 'cabelo',
+        'subcategory' => 'cabelo-alisamento',
+        'image' => 'progressiva-sem-formol.jpg',
+        'name' => 'Progressiva sem Formol',
+        'description' => 'Alinhamento natural dos fios',
+        'time' => '3h',
+        'price' => 'A partir de R$100'
+    ],
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | MAQUIAGEM - SOCIAL
-                |--------------------------------------------------------------------------
-                */
 
-                [
-                    'category' => 'makeup',
-                    'subcategory' => 'make-social',
-                    'image' => 'maquiagem-social.jpg',
-                    'name' => 'Maquiagem Social',
-                    'description' => 'Produção para eventos',
-                    'time' => '1h',
-                    'price' => 'R$120'
-                ],
+    /*
+    |--------------------------------------------------------------------------
+    | UNHAS - MANICURE
+    |--------------------------------------------------------------------------
+    */
 
-                [
-                    'category' => 'makeup',
-                    'subcategory' => 'make-social',
-                    'image' => 'maquiagem-festa.jpg',
-                    'name' => 'Maquiagem Festa',
-                    'description' => 'Produção sofisticada',
-                    'time' => '1h20',
-                    'price' => 'R$150'
-                ],
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-manicure',
+        'image' => 'manicure.jpg',
+        'name' => 'Manicure',
+        'description' => 'Cuidados completos das mãos',
+        'time' => '40 min',
+        'price' => 'R$20'
+    ],
 
-                [
-                    'category' => 'makeup',
-                    'subcategory' => 'make-social',
-                    'image' => 'maquiagem-glam.jpg',
-                    'name' => 'Maquiagem Glam',
-                    'description' => 'Produção completa glam',
-                    'time' => '1h40',
-                    'price' => 'R$180'
-                ],
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-manicure',
+        'image' => 'pedicure.jpg',
+        'name' => 'Pedicure',
+        'description' => 'Cuidados completos dos pés',
+        'time' => '40 min',
+        'price' => 'R$25'
+    ],
 
-                [
-                    'category' => 'makeup',
-                    'subcategory' => 'make-social',
-                    'image' => 'maquiagem-noiva.jpg',
-                    'name' => 'Maquiagem Noiva',
-                    'description' => 'Produção especial para noivas',
-                    'time' => '2h',
-                    'price' => 'R$300'
-                ],
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-manicure',
+        'image' => 'manicure-pedicure.jpg',
+        'name' => 'Manicure + Pedicure Simples',
+        'description' => 'Serviço completo tradicional',
+        'time' => '1h',
+        'price' => 'R$35'
+    ],
 
-            ];
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-manicure',
+        'image' => 'manicure-decorada.jpg',
+        'name' => 'Manicure + Pedicure Decorada',
+        'description' => 'Decoração personalizada',
+        'time' => '1h20',
+        'price' => 'R$45'
+    ],
+
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-manicure',
+        'image' => 'gel.jpg',
+        'name' => 'Esmaltação em Gel',
+        'description' => 'Maior durabilidade e brilho',
+        'time' => '1h',
+        'price' => 'R$35'
+    ],
+
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | UNHAS - ALONGAMENTO
+    |--------------------------------------------------------------------------
+    */
+
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-alongamento',
+        'image' => 'acrigel.jpg',
+        'name' => 'Colocação de Acrigel',
+        'description' => 'Alongamento resistente',
+        'time' => '2h',
+        'price' => 'R$80'
+    ],
+
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-alongamento',
+        'image' => 'postica-realista.jpg',
+        'name' => 'Postiça Realista',
+        'description' => 'Aplicação natural',
+        'time' => '1h',
+        'price' => 'R$40'
+    ],
+
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-alongamento',
+        'image' => 'banho-gel.jpg',
+        'name' => 'Banho de Gel',
+        'description' => 'Fortalecimento das unhas',
+        'time' => '1h20',
+        'price' => 'R$60'
+    ],
+
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-alongamento',
+        'image' => 'manutencao-acrigel.jpg',
+        'name' => 'Manutenção de Acrigel',
+        'description' => 'Manutenção do alongamento',
+        'time' => '1h20',
+        'price' => 'R$60'
+    ],
+
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | UNHAS - EXTRAS
+    |--------------------------------------------------------------------------
+    */
+
+    [
+        'category' => 'unha',
+        'subcategory' => 'unha-extras',
+        'image' => 'encapsulada.jpg',
+        'name' => 'Unha Encapsulada',
+        'description' => 'Decoração encapsulada (par)',
+        'time' => '40 min',
+        'price' => 'R$20'
+    ],
+
+];
 
         @endphp
 
@@ -340,22 +343,38 @@
 
         @foreach($services as $service)
 
-            <div
-                x-show="
-                    categoriaSelecionada === '{{ $service['category'] }}'
-                    &&
-                    subcategoriaSelecionada === '{{ $service['subcategory'] }}'
-                "
-                x-transition
-            >
 
-                <x-agendamento.card-service
-                    :service="$service"
-                />
+<div
 
-            </div>
+x-show="
+(
+    !categoriaSelecionada
+    ||
+    categoriaSelecionada === '{{ $service['category'] }}'
+)
+&&
+(
+    !subcategoriaSelecionada
+    ||
+    subcategoriaSelecionada === '{{ $service['subcategory'] }}'
+)
+"
 
-        @endforeach
+x-transition
+
+
+>
+
+
+<x-agendamento.card-service
+    :service="$service"
+/>
+
+
+</div>
+
+
+@endforeach
 
     </div>
 

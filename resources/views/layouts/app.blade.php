@@ -77,8 +77,7 @@
         {{ $slot }}
     </main>
 
-    {{-- Footer --}}
-    <x-layout.footer />
+   
 
 </body>
 

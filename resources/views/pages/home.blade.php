@@ -8,4 +8,6 @@
 
 <x-home.gallery />
 
+<x-layout.footer />
+
 </x-app-layout>
