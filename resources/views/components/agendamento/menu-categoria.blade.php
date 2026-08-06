@@ -1,16 +1,4 @@
-{{-- =========================================================
-FLOATING CATEGORY MENU COMPONENT
-========================================================= --}}
-
-
-@php
-
-use App\Data\Categories;
-
-$categories = Categories::all();
-
-@endphp
-
+@props(['categories'])
 
 
 <div class="fixed inset-x-0 top-16 z-50 pointer-events-none sm:top-20">
@@ -28,13 +16,6 @@ x-data="{ active:null }"
 class="pointer-events-auto flex items-center gap-3 rounded-full border border-zinc-300 bg-white p-1.5 shadow-sm backdrop-blur-xl"
 
 >
-
-
-
-
-
-
-
 
 {{-- =====================================================
     CATEGORIAS
@@ -57,15 +38,13 @@ class="pointer-events-auto flex items-center gap-3 rounded-full border border-zi
 
 @click="
 
-active === '{{ $category['id'] }}'
+active === '{{ $category->slug }}'
 
 ? active=null
 
-: active='{{ $category['id'] }}';
+: active='{{ $category->slug }}';
 
-
-selecionarCategoria('{{ $category['id'] }}');
-
+selecionarCategoria('{{ $category->slug }}');
 "
 
 class="group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 hover:scale-[1.04] hover:bg-rose-200 sm:h-9 sm:w-9 lg:h-10 lg:w-10"
@@ -77,7 +56,7 @@ class="group flex h-8 w-8 items-center justify-center rounded-full transition-al
 
 src="{{ asset('images/icons/icons-category/'.$category['icon']) }}"
 
-alt="{{ $category['name'] }}"
+alt="{{ $category->name }}"
 
 class="h-5 w-5 object-contain transition-transform duration-500 group-hover:scale-[1.08]"
 
@@ -98,8 +77,7 @@ class="h-5 w-5 object-contain transition-transform duration-500 group-hover:scal
 
 <div
 
-x-show="active === '{{ $category['id'] }}'"
-
+x-show="active === '{{ $category->slug }}'"
 x-cloak
 
 x-transition:enter="transition ease-out duration-300"
@@ -123,16 +101,15 @@ class="absolute left-1/2 top-12 -translate-x-1/2 transform sm:top-14"
 
 
 
-@foreach($category['items'] as $item)
-
+@foreach($category->subcategories as $item)
 
 <button
 
 @click="
 
 selecionarSubcategoria(
-    '{{ $category['id'] }}',
-    '{{ $item['id'] }}'
+    '{{ $category->slug }}',
+    '{{ $item->slug }}'
 );
 
 active=null;
@@ -148,7 +125,7 @@ class="group flex h-8 h-8 w-8 items-center justify-center rounded-full transitio
 
 src="{{ asset('images/icons/icons-subcategory/'.$item['icon']) }}"
 
-alt="{{ $item['name'] }}"
+alt="{{ $item->name }}"
 
 class="h-5 w-5 object-contain transition-transform duration-500 group-hover:scale-[1.08]"
 

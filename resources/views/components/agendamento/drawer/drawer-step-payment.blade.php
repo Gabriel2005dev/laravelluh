@@ -23,7 +23,7 @@ $payments = [
     ],
 
     [
-        'id' => 'money',
+        'id' => 'cash',
         'title' => 'Dinheiro',
         'description' => 'Pagamento presencial.',
         'icon' => 'money'

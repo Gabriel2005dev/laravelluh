@@ -2,14 +2,7 @@
     CATÁLOGO DE SERVIÇOS
 ====================================================== --}}
 
-
-@php
-
-use App\Data\Services;
-
-$services = Services::all();
-
-@endphp
+@props(['services'])
 
 
 
@@ -46,8 +39,7 @@ x-show="
 
     ||
 
-    categoriaSelecionada === '{{ $service['category'] }}'
-
+       categoriaSelecionada === '{{ $service->subcategory->category->slug }}'
 )
 
 &&
@@ -58,8 +50,7 @@ x-show="
 
     ||
 
-    subcategoriaSelecionada === '{{ $service['subcategory'] }}'
-
+  subcategoriaSelecionada === '{{ $service->subcategory->slug }}'
 )
 
 "
