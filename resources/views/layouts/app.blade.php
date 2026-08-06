@@ -15,6 +15,11 @@
         content="{{ csrf_token() }}"
     >
 
+    <meta 
+        name="user-authenticated"
+        content="{{ auth()->check() ? 'true' : 'false' }}"
+    >
+
     
 
     <title>{{ $title ?? config('app.name', 'Studio Luh') }}</title>

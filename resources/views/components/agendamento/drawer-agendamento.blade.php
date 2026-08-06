@@ -1,33 +1,31 @@
 {{-- ===========================================================
 | DRAWER DE AGENDAMENTO
 |--------------------------------------------------------------------------
-| Este componente é responsável por:
+| Responsabilidades:
 |
 | • Controlar abertura e fechamento do Drawer
-| • Controlar as etapas do agendamento
-| • Armazenar os dados temporários do usuário
-| • Renderizar os componentes de cada etapa
+| • Renderizar as etapas do agendamento
+| • Exibir o fluxo do usuário
 |
-| Todo o estado do Drawer fica centralizado aqui.
+| A lógica do Gate de autenticação fica no drawerAgendamento.js.
 |--------------------------------------------------------------------------
 --}}
 
 <div
 
-@abrir-drawer.window="abrirDrawer($event.detail.service)"
+    @abrir-drawer.window="abrirDrawer($event.detail.service)"
 
-x-show="drawer.aberto"
+    x-show="drawer.aberto"
 
-x-cloak
+    x-cloak
 
-class="
-fixed
-inset-0
-z-[70]
-"
+    class="
+    fixed
+    inset-0
+    z-[70]
+    "
 
 >
-
 
     {{-- ===========================================================
         OVERLAY
@@ -45,7 +43,6 @@ z-[70]
         @click="drawer.aberto = false"
 
     ></div>
-
 
 
     {{-- ===========================================================
@@ -106,7 +103,6 @@ z-[70]
 
     >
 
-
         {{-- ===========================================================
             HEADER
         ============================================================ --}}
@@ -136,63 +132,36 @@ z-[70]
 
         >
 
-
-            {{-- =======================================================
-                ETAPA 1
-            ======================================================== --}}
-
+            {{-- ETAPA 1 --}}
             <template x-if="drawer.etapa === 1">
-
                 <x-agendamento.drawer.drawer-step-date />
-
             </template>
 
 
-
-            {{-- =======================================================
-                ETAPA 2
-            ======================================================== --}}
-
+            {{-- ETAPA 2 --}}
             <template x-if="drawer.etapa === 2">
-
                 <x-agendamento.drawer.drawer-step-time />
-
             </template>
 
 
-
-            {{-- =======================================================
-                ETAPA 3
-            ======================================================== --}}
-
+            {{-- ETAPA 3 --}}
             <template x-if="drawer.etapa === 3">
-
                 <x-agendamento.drawer.drawer-step-payment />
-
             </template>
 
 
-
-            {{-- =======================================================
-                ETAPA 4
-            ======================================================== --}}
-
+            {{-- ETAPA 4 - AUTENTICAÇÃO --}}
             <template x-if="drawer.etapa === 4">
-
                 <x-agendamento.drawer.drawer-step-auth />
-
             </template>
 
 
+            {{-- ETAPA 5 - CONFIRMAÇÃO --}}
             <template x-if="drawer.etapa === 5">
-
                 <x-agendamento.drawer.drawer-step-confirm />
-
             </template>
-
 
         </main>
-
 
 
         {{-- ===========================================================
@@ -201,9 +170,6 @@ z-[70]
 
         <x-agendamento.drawer.drawer-footer />
 
-
     </aside>
 
-
 </div>
-

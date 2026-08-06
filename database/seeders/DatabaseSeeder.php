@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CatalogSeeder::class,
+            BusinessHourSeeder::class,   // ← Adicione esta linha
             SchedulingSeeder::class,
         ]);
     }

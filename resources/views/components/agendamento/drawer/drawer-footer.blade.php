@@ -1,42 +1,53 @@
 {{-- ===========================================================
 | FOOTER DRAWER
 |--------------------------------------------------------------------------
-| Responsável pela navegação entre as etapas.
+| Responsável pela navegação do fluxo.
 |--------------------------------------------------------------------------
-| • Voltar
-| • Continuar
-| • Confirmar
+| Etapas:
+|
+| 1 - Data
+| 2 - Horário
+| 3 - Pagamento
+| 4 - Autenticação (sem footer)
+| 5 - Confirmação
 |--------------------------------------------------------------------------
 --}}
 
 <footer
 
-class="
-sticky
-bottom-0
-border-t
-border-zinc-200
-bg-white
-px-6
-py-5
-"
+    x-show="drawer.etapa !== 4"
+
+    x-transition
+
+    class="
+    sticky
+    bottom-0
+    border-t
+    border-zinc-200
+    bg-white
+    px-6
+    py-5
+    "
 
 >
 
-<div x-show="drawer.erro" x-transition class="mb-4 rounded-2xl bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-700" x-text="drawer.erro"></div>
-
+    <div
+        x-show="drawer.erro"
+        x-transition
+        class="mb-4 rounded-2xl bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-700"
+        x-text="drawer.erro"
+    ></div>
 
     <div
 
-    class="
-    flex
-    items-center
-    justify-between
-    gap-4
-    "
+        class="
+        flex
+        items-center
+        justify-between
+        gap-4
+        "
 
     >
-
 
         {{-- ===================================================
             BOTÃO VOLTAR
@@ -44,28 +55,28 @@ py-5
 
         <button
 
-        x-show="drawer.etapa > 1"
+            x-show="drawer.etapa > 1"
 
-        @click="voltarEtapa()"
+            @click="voltarEtapa()"
 
-        class="
-        flex
-        items-center
-        justify-center
-        rounded-full
-        border
-        border-zinc-300
-        px-6
-        py-3
-        text-sm
-        font-semibold
-        text-zinc-700
-        transition-all
-        duration-300
-        hover:border-orange-950
-        hover:bg-orange-950
-        hover:text-white
-        "
+            class="
+            flex
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-zinc-300
+            px-6
+            py-3
+            text-sm
+            font-semibold
+            text-zinc-700
+            transition-all
+            duration-300
+            hover:border-orange-950
+            hover:bg-orange-950
+            hover:text-white
+            "
 
         >
 
@@ -74,21 +85,15 @@ py-5
         </button>
 
 
-
-        {{-- ===================================================
-            ESPAÇADOR
-        ==================================================== --}}
+        {{-- Espaçador --}}
 
         <div
 
-        x-show="drawer.etapa===1"
+            x-show="drawer.etapa === 1"
 
-        class="
-        flex-1
-        "
+            class="flex-1"
 
         ></div>
-
 
 
         {{-- ===================================================
@@ -97,60 +102,60 @@ py-5
 
         <button
 
-        x-show="drawer.etapa < 4"
+            x-show="drawer.etapa < 4"
 
-        @click="proximaEtapa()"
+            @click="proximaEtapa()"
 
-        :disabled="
+            :disabled="
 
-            (drawer.etapa===1 && !drawer.data)
+                (drawer.etapa === 1 && !drawer.data)
 
-            ||
+                ||
 
-            (drawer.etapa===2 && !drawer.horario)
+                (drawer.etapa === 2 && !drawer.horario)
 
-            ||
+                ||
 
-            (drawer.etapa===3 && !drawer.pagamento)
+                (drawer.etapa === 3 && !drawer.pagamento)
 
-        "
+            "
 
-        class="
-        inline-flex
-        items-center
-        justify-center
-        rounded-full
-        bg-orange-950
-        px-8
-        py-3
-        text-sm
-        font-semibold
-        text-white
-        transition-all
-        duration-300
-        "
+            class="
+            inline-flex
+            items-center
+            justify-center
+            rounded-full
+            bg-orange-950
+            px-8
+            py-3
+            text-sm
+            font-semibold
+            text-white
+            transition-all
+            duration-300
+            "
 
-        :class="
+            :class="
 
-            (drawer.etapa===1 && !drawer.data)
+                (drawer.etapa === 1 && !drawer.data)
 
-            ||
+                ||
 
-            (drawer.etapa===2 && !drawer.horario)
+                (drawer.etapa === 2 && !drawer.horario)
 
-            ||
+                ||
 
-            (drawer.etapa===3 && !drawer.pagamento)
+                (drawer.etapa === 3 && !drawer.pagamento)
 
-            ?
+                ?
 
-            'cursor-not-allowed opacity-40'
+                'cursor-not-allowed opacity-40'
 
-            :
+                :
 
-            'hover:scale-[1.02] hover:bg-orange-900'
+                'hover:scale-[1.02] hover:bg-orange-900'
 
-        "
+            "
 
         >
 
@@ -159,33 +164,32 @@ py-5
         </button>
 
 
-
         {{-- ===================================================
             CONFIRMAR
         ==================================================== --}}
 
         <button
 
-        x-show="drawer.etapa===4"
+            x-show="drawer.etapa === 5"
 
-        @click="confirmarAgendamento()"
+            @click="confirmarAgendamento()"
 
-        class="
-        inline-flex
-        items-center
-        justify-center
-        rounded-full
-        bg-green-600
-        px-8
-        py-3
-        text-sm
-        font-semibold
-        text-white
-        transition-all
-        duration-300
-        hover:scale-[1.02]
-        hover:bg-green-700
-        "
+            class="
+            inline-flex
+            items-center
+            justify-center
+            rounded-full
+            bg-green-600
+            px-8
+            py-3
+            text-sm
+            font-semibold
+            text-white
+            transition-all
+            duration-300
+            hover:scale-[1.02]
+            hover:bg-green-700
+            "
 
         >
 

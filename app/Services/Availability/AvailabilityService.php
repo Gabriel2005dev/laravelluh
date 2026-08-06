@@ -14,13 +14,14 @@ use Illuminate\Support\Collection;
 class AvailabilityService
 {
     public function availableSlots(Service $service, string $date): array
-    {
-        $day = CarbonImmutable::parse($date)->startOfDay();
-        $schedule = $this->scheduleFor($day);
+{
+    $day = CarbonImmutable::parse($date)->startOfDay();
+    $schedule = $this->scheduleFor($day);
 
-        if (! $schedule || ! $schedule['is_open']) {
-            return [];
-        }
+    if (! $schedule || ! $schedule['is_open']) {
+        return [];
+    }
+
 
         $start = $day->setTimeFromTimeString($schedule['opens_at']);
         $end = $day->setTimeFromTimeString($schedule['closes_at']);
@@ -36,11 +37,10 @@ class AvailabilityService
                 continue;
             }
 
-            if ($this->overlapsAny($slotStart, $slotEnd, $busyPeriods)) {
-                continue;
-            }
-
-            $slots[] = $slotStart->format('H:i');
+            $slots[] = [
+                'time' => $slotStart->format('H:i'),
+                'available' => ! $this->overlapsAny($slotStart, $slotEnd, $busyPeriods),
+            ];
         }
 
         return $slots;

@@ -30,15 +30,23 @@
 
     
     <div class="grid grid-cols-5 gap-4" x-show="!drawer.carregandoHorarios && drawer.horarios.length > 0">
-    <template x-for="horario in drawer.horarios" :key="horario">
 
+        <template x-for="horario in drawer.horarios" :key="horario.time">
 
             <button
-                @click="drawer.horario=horario"                class="rounded-full border border-zinc-200 px-4 py-2 text-center text-sm font-semibold transition-all duration-300"
+                :disabled="!horario.available"
+                @click="horario.available && (drawer.horario = horario.time)" 
+                class="rounded-full border border-zinc-200 px-4 py-2 text-center text-sm font-semibold transition-all duration-300"
 
-                :class="drawer.horario==horario ? 'border-orange-950 bg-orange-950 text-white' : 'bg-white text-zinc-700 hover:border-orange-950 hover:text-orange-950'"
+                :class="
+                    !horario.available
+                        ? 'cursor-not-allowed border-zinc-200 bg-zinc-100 text-zinc-400 line-through'
+                        : drawer.horario === horario.time
+                            ? 'border-orange-950 bg-orange-950 text-white'
+                            : 'bg-white text-zinc-700 hover:border-orange-950 hover:text-orange-950'
+                "
 
-                x-text="horario">
+                x-text="horario.time">
                 
             </button>
 
