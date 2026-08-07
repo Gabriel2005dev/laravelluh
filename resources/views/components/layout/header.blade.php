@@ -35,6 +35,13 @@
             'href'   => route('agendar'),
             'active' => request()->routeIs('agendar'),
         ],
+
+        [
+            'label'  => 'Meu Painel',
+            'href'   => route('dashboard'),
+            'active' => request()->routeIs('dashboard'),
+            'auth'   => true,
+        ],
     ];
 @endphp
 

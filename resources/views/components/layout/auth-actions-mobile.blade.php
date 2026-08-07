@@ -146,6 +146,43 @@
 
     </div>
 
+    {{-- Meu Painel --}}
+    <a
+        href="{{ route('dashboard') }}"
+        @click="open = false"
+        class="
+            mt-4
+            flex
+            items-center
+            justify-between
+            rounded-xl
+            px-4
+            py-4
+            text-sm
+            font-medium
+            text-zinc-700
+            transition-all
+            duration-200
+            hover:bg-zinc-100
+        "
+    >
+
+        <span>
+            Meu Painel
+        </span>
+
+
+        <x-lucide-chevron-right
+            class="
+                h-5
+                w-5
+                text-zinc-400
+            "
+        />
+
+    </a>
+
+
 
     {{-- Meu Perfil --}}
     <a

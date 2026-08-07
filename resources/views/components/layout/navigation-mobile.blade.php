@@ -6,6 +6,8 @@
 
     @foreach ($navItems as $item)
 
+    @continue(($item['auth'] ?? false) && auth()->guest())
+
         <a
             href="{{ $item['href'] }}"
             @click="open = false"

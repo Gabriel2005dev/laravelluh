@@ -62,6 +62,12 @@
 
         </div>
 
+            <x-dropdown-link
+            :href="route('dashboard')"
+        >
+            Meu Painel
+        </x-dropdown-link>
+
 
         <x-dropdown-link
             :href="route('profile.edit')"

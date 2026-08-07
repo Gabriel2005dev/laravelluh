@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgendamentoController;
+use App\Http\Controllers\ClientDashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,7 @@ Route::get('/agendamento', AgendamentoController::class)->name('agendar');
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::view('/dashboard', 'dashboard')
+       Route::get('/dashboard', ClientDashboardController::class)
         ->name('dashboard');
 
 });
