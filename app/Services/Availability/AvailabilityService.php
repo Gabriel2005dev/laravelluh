@@ -48,7 +48,9 @@ class AvailabilityService
 
     public function isAvailable(Service $service, CarbonImmutable $startsAt): bool
     {
-        return in_array($startsAt->format('H:i'), $this->availableSlots($service, $startsAt->toDateString()), true);
+            return collect($this->availableSlots($service, $startsAt->toDateString()))
+            ->contains(fn (array $slot): bool => $slot['time'] === $startsAt->format('H:i')
+                && $slot['available']);
     }
 
     public function calendar(Service $service, string $month): array

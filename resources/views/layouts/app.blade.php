@@ -20,6 +20,11 @@
         content="{{ auth()->check() ? 'true' : 'false' }}"
     >
 
+    @auth
+        <meta name="user-name" content="{{ auth()->user()->name }}">
+        <meta name="user-email" content="{{ auth()->user()->email }}">
+    @endauth
+
     
 
     <title>{{ $title ?? config('app.name', 'Studio Luh') }}</title>
